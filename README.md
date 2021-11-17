@@ -20,5 +20,5 @@ pip install -r requirements.txt
 ```shell
 .venv/Scripts/activate
 ```
-* set a value for constant k in crabtest.py
+* set a value for constant K in crabtest.py
 * run crabtest.py
