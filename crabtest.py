@@ -1,9 +1,12 @@
 # application of the knn implementation to crab biometric data to predict crab sex
-# conclusion: correctly labels 95% of crabs in test data set
+# conclusion: correctly labels 99% of crabs in test data set when k=4
 
 from knn import KNN
 from csv import reader
 import pandas as pd
+
+# value of k for knn
+K = 4
 
 # import crabdata from crabdata.csv
 crabdata = pd.read_csv(r'crabdata.csv')
@@ -23,20 +26,20 @@ test_labels = test_set['sex'].tolist()
 test_data = pd.DataFrame(train_set, columns=['FL', 'RW', 'CL', 'CW', 'BD']).values.tolist()
 
 # create and make predictions using KNN
-knn = KNN(3)
+knn = KNN(K)
 knn.train(train_data, train_labels)
 predict_labels = knn.predict(test_data)
 accuracy = knn.test(test_data, test_labels)
-
 outcomes = pd.DataFrame([predict_labels, test_labels], index=['predicted labels', 'actual labels']).T
 
+# output
 print('TRAINING DATASET:')
 print(train_set)
 print()
 print('TESTING DATASET:')
 print(test_set)
 print()
-print('TESTING RESULTS:')
+print('TESTING RESULTS for k='+ str(K) +':')
 print(outcomes)
 print()
 print("% CORRECT: " + str(accuracy))
