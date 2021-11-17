@@ -1,5 +1,5 @@
 # crab-knn
-implementation of the KNN algorithm applied to biometrics data of purple rock crabs (leptograpsus variegatus) to classify the sex of leptograpsus crabs
+implementation of the KNN algorithm in Python applied to biometrics data of purple rock crabs (leptograpsus variegatus) to classify the sex of leptograpsus crabs
 
 ## Write-up:
 https://docs.google.com/document/d/1uK0CxXXiHFax31C6Azo5iRrv-vJqMtH2nyr85FKXDKc/edit?usp=sharing
